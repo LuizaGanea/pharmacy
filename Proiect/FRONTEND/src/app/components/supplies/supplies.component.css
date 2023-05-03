@@ -1,0 +1,98 @@
+/* suppliesComponent's private CSS styles */
+.supplies {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 20em;
+  }
+  
+  label {
+    color: #435960;
+    font-weight: bold;
+  }
+  input {
+    font-size: 1em;
+    padding: .5rem;
+  }
+  
+  .supplies li {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .supplies li:hover {
+    left: .1em;
+  }
+  
+  .supplies a {
+    color: #333;
+    text-decoration: none;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+  }
+  
+  .supplies a:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+  }
+  
+  .supplies a:active {
+    background-color: #525252;
+    color: #fafafa;
+  }
+  
+  .supplies .badge {
+    display: inline-block;
+    font-size: small;
+    color: black;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #fdd3d3;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    min-width: 16px;
+    text-align: right;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .add-button {
+   padding: .5rem 1.5rem;
+   font-size: 1rem;
+   margin-bottom: 2rem;
+  }
+  
+  .add-button:hover {
+    color: white;
+    background-color: #e394da;
+  }
+  
+  button.delete {
+    position: absolute;
+    left: 290px;
+    top: 5px;
+    background-color: white;
+    color:  #525252;
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 1px 10px 3px 10px;
+  }
+  
+  button.delete:hover {
+    background-color: #525252;
+    color: white;
+  }
+  
+  
+  /*
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  */

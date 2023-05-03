@@ -1,0 +1,29 @@
+/* AppComponent's private CSS styles */
+h1 {
+  margin-bottom: 0;
+}
+nav a {
+  padding: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #fdd3d3;
+  color: #160214;
+  border-radius: 4px;
+}
+nav a:hover {
+  color: rgb(253, 253, 253);
+  background-color: #42545C;
+}
+nav a.active {
+  background-color: black;
+}
+
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

@@ -1,0 +1,33 @@
+<div *ngIf="medicine">
+    <h2>{{medicine.name}} details</h2>
+    <div><span>id: </span>{{medicine.id}}</div>
+    <div>
+      <label for="name">Name: </label>
+      <input id="name" [(ngModel)]="medicine.name"/>
+    </div>
+    <div>
+      <label for="description">Description: </label>
+      <input id="description" [(ngModel)]="medicine.description"/>
+    </div>
+    <div>
+      <label for="quantity">Quantity: </label>
+      <input id="quantity" [(ngModel)]="medicine.quantity" disabled = true/>
+    </div>
+    <!-- <div>
+      <label for="requiresP">Requires prescription: </label>
+      <input id="requiresP" [(ngModel)]="medicine.requiresPrescription" disabled = true/>
+    </div>
+    <div>
+        <label for="minAge">Minimum age: </label>
+        <input id="minAge" [(ngModel)]="medicine.minAge" disabled = true/>
+      </div> -->
+    <button type="button" (click)="goBack()">Go back</button>
+    <button type="button" (click)="save()">Save</button>
+  </div>
+  
+  
+  <!-- 
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  -->

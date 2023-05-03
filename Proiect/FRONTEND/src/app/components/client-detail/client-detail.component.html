@@ -1,0 +1,29 @@
+<div *ngIf="client">
+  <h2>{{client.firstName}} {{client.lastName}} details</h2>
+  <div><span>id: </span>{{client.id}}</div>
+  <div>
+    <label for="first-name">First Name: </label>
+    <input id="first-name" [(ngModel)]="client.firstName"/>
+  </div>
+  <div>
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" [(ngModel)]="client.lastName"/>
+  </div>
+  <div>
+    <label for="cnp">CNP: </label>
+    <input id="cnp" [(ngModel)]="client.cnp"/>
+  </div>
+  <div>
+    <label for="date-of-birth">Date of birth: </label>
+    <input type="date" id="date-of-birth" [(ngModel)]="client.dateOfBirth"/>
+  </div>
+  <button type="button" (click)="goBack()">Go back</button>
+  <button type="button" (click)="save()">Save</button>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

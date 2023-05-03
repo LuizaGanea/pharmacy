@@ -1,0 +1,38 @@
+<div *ngIf="sale">
+    <h2>{{sale.date_sale}} details</h2>
+    <div><span>id: </span>{{sale.id}}</div>
+    <div>
+      <label for="">Date Of Sale </label>
+      <input type="date" id="date-of-sale" [(ngModel)]="sale.date_sale"/>
+    </div>
+    <div>
+      <label for="quantity">Quantity: </label>
+      <input id="quantity" [(ngModel)]="sale.quantity"/>
+    </div>
+   
+  <div class="form-group">
+    <label for="new-id-medicament">ID Medicine
+    <select id="new-id-medicament" class="form-control" [(ngModel)]="selectedMedicine" required>
+      <option *ngFor="let medicine of medicines" [ngValue]="medicine">{{medicine.name}}</option>
+    </select>
+    </label>
+</div>
+<br/>
+<div class="form-group">
+  <label for="new-id-client">ID Client
+  <select id="new-id-client" class="form-control" [(ngModel)]="selectedClient" required>
+    <option *ngFor="let client of clients" [ngValue]="client">{{client.firstName}} {{client.lastName}}</option>
+  </select>
+  </label>
+</div>
+
+    <button type="button" (click)="goBack()">Go back</button>
+    <button type="button" (click)="save()">Save</button>
+  </div>
+  
+  
+  <!-- 
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  -->

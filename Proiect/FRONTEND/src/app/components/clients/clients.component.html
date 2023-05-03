@@ -1,0 +1,37 @@
+<h2>My clients</h2>
+
+<div>
+  <label for="new-first-name">First name: </label>
+  <input id="new-first-name" #firstName />
+  <br/>
+  <label for="new-last_name">Last name: </label>
+  <input id="new-last_name" #lastName />
+  <br/>
+  <label for="new-cnp">CNP: </label>
+  <input id="new-cnp" #cnp />
+  <br/>
+  <label for="new-date_of_birth">Date of birth: </label>
+  <input type="date" id="new-dat_of_birth" placeholder="YYYY-MM-DD" #dob />
+  <br/>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(firstName.value, lastName.value, cnp.value, dob.value); firstName.value=''; lastName.value=''; cnp.value=''; dob.value=''">
+    Add client
+  </button>
+</div>
+
+<ul class="clients">
+  <li *ngFor="let client of clients">
+    <a routerLink="{{client.id}}/details">
+      <span class="badge">{{client.id}}</span> {{client.firstName}} {{client.lastName}}
+    </a>
+    <button type="button" class="delete" title="delete client"
+      (click)="delete(client)">x</button>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

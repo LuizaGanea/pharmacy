@@ -1,0 +1,44 @@
+<h2>My supplies</h2>
+
+<div>
+  <label for="new-date-of-supply">Date of supply: </label>
+  <input type="date" id="new-date-of-supply" placeholder="YYYY-MM-DD" #dateOfSupply />
+  <br/>
+  <label for="new-quantity">Quantity: </label>
+  <input id="new-quantity" #quantity />
+  <br/>
+
+ <!--<label for="new-id-medicament">ID Medicine: </label> -->
+  <!--<input id="new-id-medicament" #idM /> -->
+  <div class="form-group">
+    <label for="new-id-medicament">ID Medicine
+    <select id="new-id-medicament" class="form-control" [(ngModel)]="selectedMedicine" required>
+      <option *ngFor="let medicine of medicines" [ngValue]="medicine">{{medicine.name}}</option>
+    </select>
+    </label>
+</div>
+
+  <br/>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(dateOfSupply.value, quantity.value); 
+  dateOfSupply.value=''; quantity.value=''">
+    Add supply
+  </button>
+</div>
+
+<ul class="supplies">
+  <li *ngFor="let supply of supplies">
+    <a routerLink="{{supply.id}}/details">
+      <span class="badge">{{supply.id}}</span> {{supply.date_supply}} {{supply.medicament?.name}} {{supply.id_medicament}}
+    </a>
+    <button type="button" class="delete" title="delete supply"
+      (click)="delete(supply)">x</button>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

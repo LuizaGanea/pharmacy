@@ -1,0 +1,57 @@
+<h2>My sales</h2>
+
+<div>
+  <label for="new-date-of-sale">Date of sale: </label>
+  <input type="date" id="new-date-of-sale" placeholder="YYYY-MM-DD" #dateOfSale />
+  <br/>
+  <label for="new-quantity">Quantity: </label>
+  <input id="new-quantity" #quantity />
+  <br/>
+
+  <!--
+  <label for="new-id-client">ID Client: </label>
+  <input id="new-id-client" #idC />
+  <br/>
+  <label for="new-id-medicament">ID Medicine: </label>
+  <input id="new-id-medicament" #idM />
+  <br/>
+  -->
+
+  <div class="form-group">
+    <label for="new-id-medicament">ID Medicine
+    <select id="new-id-medicament" class="form-control" [(ngModel)]="selectedMedicine" required>
+      <option *ngFor="let medicine of medicines" [ngValue]="medicine">{{medicine.name}}</option>
+    </select>
+    </label>
+</div>
+<br/>
+<div class="form-group">
+  <label for="new-id-client">ID Client
+  <select id="new-id-client" class="form-control" [(ngModel)]="selectedClient" required>
+    <option *ngFor="let client of clients" [ngValue]="client">{{client.firstName}}  {{client.lastName}}</option>
+  </select>
+  </label>
+</div>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(dateOfSale.value, quantity.value); dateOfSale.value=''; quantity.value=''">
+    Add sale
+  </button>
+</div>
+<br/>
+<ul class="sales">
+  <li *ngFor="let sale of sales">
+    <a routerLink="{{sale.id}}/details">
+      <span class="badge">{{sale.id}}</span> {{sale.date_sale}} {{sale.medicament?.name}} 
+    </a>
+    <button type="button" class="delete" title="delete sale"
+      (click)="delete(sale)">x</button>
+  </li>
+</ul>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

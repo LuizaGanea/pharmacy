@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/clients">Clients</a>
+  <a routerLink="/medicine">Medicine</a>
+  <a routerLink="/supplies">Supplies</a>
+  <a routerLink="/sales">Sales</a>
+</nav>
+
+<button type="button" class="save-button" (click)="save()">
+  Save
+</button>
+
+<button type="button" class="restore-button" (click)="restore()">
+  Restore
+</button>
+
+<router-outlet></router-outlet>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

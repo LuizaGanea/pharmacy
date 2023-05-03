@@ -1,0 +1,29 @@
+<div *ngIf="supply">
+    <h2>{{supply.date_supply}} details</h2>
+    <div><span>id: </span>{{supply.id}}</div>
+    <div>
+      <label for="">Date Of Supply </label>
+      <input type="date" id="date-of-supply" [(ngModel)]="supply.date_supply"/>
+    </div>
+    <div>
+      <label for="quantity">Quantity: </label>
+      <input id="quantity" [(ngModel)]="supply.quantity"/>
+    </div>
+  
+    <div class="form-group">
+      <label for="new-id-medicament">ID Medicine
+      <select id="new-id-medicament" class="form-control" [(ngModel)]="selectedMedicine" required>
+        <option *ngFor="let medicine of medicines" [ngValue]="medicine">{{medicine.name}}</option>
+      </select>
+      </label>
+  </div>
+    <button type="button" (click)="goBack()">Go back</button>
+    <button type="button" (click)="save()">Save</button>
+  </div>
+  
+  
+  <!-- 
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  -->
